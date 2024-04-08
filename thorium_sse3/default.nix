@@ -1,6 +1,6 @@
 { appimageTools, fetchurl }:
 let
-  pname = "thorium";
+  pname = "thorium_sse3";
   version = "122.0.6261.132";
 
   src = fetchurl {
