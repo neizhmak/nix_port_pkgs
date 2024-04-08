@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs, stdenv, bash }:
 let
   thoriumVersion = "122.0.6261.132";
   thoriumSrc = {
