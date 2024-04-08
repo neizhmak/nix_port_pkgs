@@ -1,5 +1,5 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { } }:
   
 rec {
-  thorium = pkgs.callPackage ./thorium {};
+  thorium_sse3 = pkgs.callPackage ./thorium { };
 }
