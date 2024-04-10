@@ -11,7 +11,7 @@ let
   pname = "thorium_sse3";
   version = "122.0.6261.132";
 
-  src = fetchurl {
+  src = pkgs.fetchurl {
     url = "https://github.com/Alex313031/thorium/releases/download/M${version}/Thorium_Browser_${version}_SSE3.AppImage";
     sha256 = "sha256-ijhqMqaCOzPwmGc2GeAONpytJxcoSzyOfVsT0lSBat0=";
   };
