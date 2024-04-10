@@ -43,6 +43,7 @@
 , lld
 , libicns
 , nix-update-script
+, pkgs
 }:
 
 # Main reference:
