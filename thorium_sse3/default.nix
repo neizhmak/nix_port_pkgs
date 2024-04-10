@@ -8,8 +8,8 @@ let
     sha256 = "sha256-ijhqMqaCOzPwmGc2GeAONpytJxcoSzyOfVsT0lSBat0=";
   };
 
-  appimageContents = appimageTools.extract {
-    inherit pname version src;
+  appimageContents = appimageTools.extractType2 {
+    inherit pname src;
   };
 in appimageTools.wrapType2 {
   inherit pname version src;
