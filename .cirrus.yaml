@@ -1,7 +1,7 @@
 container:
   image: nixos/nix
   cpu: 4
-  memory: 4G
+  memory: 8G
 
 build_ayugram_task:
   preparation_script:
