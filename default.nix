@@ -4,7 +4,9 @@
 #  thorium_sse3 = pkgs.callPackage ./thorium_sse3 { };
 #}
 
-{ appimageTools, fetchurl }:
+{ pkgs ? import <nixpkgs> { }
+, lib ? import <nixpkgs/lib>
+}:
 let
   pname = "thorium_sse3";
   version = "122.0.6261.132";
