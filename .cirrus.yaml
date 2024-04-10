@@ -2,12 +2,14 @@ container:
   image: nixos/nix
   cpu: 4
   memory: 8G
+env:
+  TOKEN: ENCRYPTED[!40027fe4177edd2cca79a61492683fa87d1296243dcc667fb8fe30fdaff0cdd91ae6143fda16ce66ada8e8a054d8c5ab!]
 
 build_ayugram_task:
   preparation_script:
   - nix-channel --update
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
-  - cachix authtoken ENCRYPTED[!40027fe4177edd2cca79a61492683fa87d1296243dcc667fb8fe30fdaff0cdd91ae6143fda16ce66ada8e8a054d8c5ab!]
+  - cachix authtoken $TOKEN
   build_script:
     - nix-build ./ -A ayugram
   push_cache_script:
