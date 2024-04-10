@@ -1,7 +1,7 @@
 { appimageTools, fetchurl }:
 let
   pname = "thorium_avx2";
-  version = "122.0.6261.132";
+  version = "122.0.6261";
 
   src = fetchurl {
     url = "https://github.com/Alex313031/thorium/releases/download/M${version}/Thorium_Browser_${version}_AVX2.AppImage";
