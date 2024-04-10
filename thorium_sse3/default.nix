@@ -1,6 +1,6 @@
 { appimageTools, fetchurl }:
 let
-  pname = "thorium_sse3";
+  pname = "thorium";
   version = "122.0.6261.132";
 
   src = fetchurl {
@@ -8,8 +8,8 @@ let
     sha256 = "sha256-ijhqMqaCOzPwmGc2GeAONpytJxcoSzyOfVsT0lSBat0=";
   };
 
-  appimageContents = appimageTools.extractType2 {
-    inherit pname version src;
+  appimageContents = appimageTools.extract {
+    inherit pname src;
   };
 in appimageTools.wrapType2 {
   inherit pname version src;
