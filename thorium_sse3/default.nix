@@ -17,5 +17,10 @@ in appimageTools.wrapType2 {
   extraInstallCommands = ''
     install -Dm444 ${appimageContents}/thorium-browser.desktop $out/share/applications/thorium-browser.desktop
     install -Dm444 ${appimageContents}/thorium.png $out/share/icons/hicolor/512x512/apps/thorium.png
+
+    substituteInPlace $out/share/applications/thorium-browser.desktop \
+      --replace /usr/bin $out/bin \
+      --replace StartupWMClass=thorium StartupWMClass=thorium-browser \
+      --replace Icon=thorium-browser Icon=$out/opt/chromium.org/thorium/product_logo_256.png
   '';
 }
