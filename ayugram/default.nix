@@ -103,7 +103,6 @@ stdenv.mkDerivation rec {
   dontWrapQtApps = true;
 
   nativeBuildInputs = [
-    clang
     pkg-config
     cmake
     ninja
