@@ -16,10 +16,10 @@ let
     sha256 = "sha256-ijhqMqaCOzPwmGc2GeAONpytJxcoSzyOfVsT0lSBat0=";
   };
 
-  appimageContents = appimageTools.extract {
+  appimageContents = pkgs.appimageTools.extract {
     inherit pname version src;
   };
-in appimageTools.wrapType2 {
+in pkgs.appimageTools.wrapType2 {
   inherit pname version src;
 
   extraInstallCommands = ''
