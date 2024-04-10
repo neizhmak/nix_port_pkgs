@@ -1,6 +1,6 @@
 { appimageTools, fetchurl }:
 let
-  pname = "thorium";
+  pname = "thorium_sse3";
   version = "122.0.6261.132";
 
   src = fetchurl {
@@ -9,7 +9,7 @@ let
   };
 
   appimageContents = appimageTools.extract {
-    inherit pname src;
+    inherit pname version src;
   };
 in appimageTools.wrapType2 {
   inherit pname version src;
@@ -17,5 +17,8 @@ in appimageTools.wrapType2 {
   extraInstallCommands = ''
     install -Dm444 ${appimageContents}/thorium-browser.desktop $out/share/applications/thorium-browser.desktop
     install -Dm444 ${appimageContents}/thorium.png $out/share/icons/hicolor/512x512/apps/thorium.png
+
+    substituteInPlace $out/share/applications/thorium-browser.desktop \
+      --replace "Exec=thorium" "Exec=${pname}-${version}"
   '';
 }
