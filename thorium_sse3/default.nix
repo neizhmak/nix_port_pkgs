@@ -16,7 +16,7 @@ in appimageTools.wrapType2 {
 
   extraInstallCommands = ''
     install -Dm444 ${appimageContents}/thorium-browser.desktop $out/share/applications/thorium-browser.desktop
-    install -Dm444 ${appimageContents}/thorium.png $out/share/icons/hicolor/512x512/apps/thorium.png
+    install -Dm444 ${appimageContents}/thorium.png $out/share/icons/hicolor/1024x1024/apps/thorium.png
 
     substituteInPlace $out/share/applications/thorium-browser.desktop \
       --replace "Exec=thorium" "Exec=${pname}-${version}"
