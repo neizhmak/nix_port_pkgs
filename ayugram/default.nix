@@ -103,7 +103,6 @@ stdenv.mkDerivation rec {
   dontWrapQtApps = true;
 
   nativeBuildInputs = [
-    clang-wrapper
     pkg-config
     cmake
     ninja
@@ -118,6 +117,7 @@ stdenv.mkDerivation rec {
   ];
 
   buildInputs = [
+    pkgs.clang
     qtbase
     qtsvg
     qtimageformats
