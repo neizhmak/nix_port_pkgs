@@ -64,11 +64,11 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "telegram-desktop";
-  version = "4.16.0";
+  version = "4.16";
 
   src = fetchFromGitHub {
-    owner = "telegramdesktop";
-    repo = "tdesktop";
+    owner = "AyuGram";
+    repo = "AyuGramDesktop";
     rev = "v${version}";
     fetchSubmodules = true;
     hash = "sha256-llrHN/XCMKwAvbyUZ/92OUjAEOPJKPbDfldVChLZo5k=";
