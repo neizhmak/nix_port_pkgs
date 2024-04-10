@@ -4,7 +4,7 @@ let
   version = "122.0.6261";
 
   src = fetchurl {
-    url = "https://github.com/Alex313031/thorium/releases/download/M${version}/Thorium_Browser_${version}_AVX2.AppImage";
+    url = "https://github.com/Alex313031/thorium/releases/download/M${version}.132/Thorium_Browser_${version}_AVX2.AppImage";
     sha256 = "sha256-ijhqMqaCOzPwmGc2GeAONpytJxcoSzyOfVsT0lSBat0=";
   };
 
