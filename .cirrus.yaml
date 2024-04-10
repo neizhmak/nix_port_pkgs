@@ -8,7 +8,7 @@ env:
 build_ayugram_task:
   preparation_script:
   - nix-channel --update
-  - nix-shell -p clang
+  - nix-env -iA nixpkgs.clang
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   - cachix authtoken $TOKEN
   build_script:
