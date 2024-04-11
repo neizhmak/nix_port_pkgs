@@ -10,6 +10,8 @@ pkgs.telegram-desktop.overrideAttrs {
       hash = "sha256-tPzoZWscPnLuOilBdCWb+ytC+/e5ZlPXX2PuEfmyKiw=";
     };
 
+    patches = [];
+
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
       "-Ddisable_autoupdate=ON"
