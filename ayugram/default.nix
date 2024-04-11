@@ -7,7 +7,7 @@ pkgs.telegram-desktop.overrideAttrs {
 
     src = fetchurl {
       url = "https://github.com/AyuGram/AyuGramDesktop/archive/refs/tags/v4.16.tar.gz";
-      hash = "sha256-llrHN/XCMKwAvbyUZ/92OUjAEOPJKPbDfldVChLZo5k=";
+      hash = "sha256-tPzoZWscPnLuOilBdCWb+ytC+/e5ZlPXX2PuEfmyKiw=";
     };
 
     cmakeFlags = [
