@@ -1,5 +1,5 @@
 { pkgs, fetchFromGitHub }:
-pkgs.telegram-desktop.overrideAttrs (
+pkgs.telegram-desktop.overrideAttrs ( finalAttrs: previousAttrs:
 let
   src = fetchFromGitHub {
     owner = "AyuGram";
@@ -16,6 +16,7 @@ in rec {
 
     patches = [];
     postPatch = '''';
+    buildInputs = previousAttrs.buildInputs + [glibmm]
 
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
