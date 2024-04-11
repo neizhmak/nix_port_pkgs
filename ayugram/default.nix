@@ -1,18 +1,16 @@
-{ pkgs, fetchurl }:
+{ pkgs, fetchFromGitHub }:
 pkgs.telegram-desktop.overrideAttrs {
     pname = "ayugram";
-    version = "4.16";
-
+    version = "4.16.0";
     mainProgram = "AyuGramDesktop";
 
-    src = fetchurl {
-      url = "https://github.com/AyuGram/AyuGramDesktop/archive/refs/tags/v4.16.tar.gz";
-      hash = "sha256-tPzoZWscPnLuOilBdCWb+ytC+/e5ZlPXX2PuEfmyKiw=";
+    src = fetchFromGitHub {
+      owner = "AyuGram";
+      repo = "AyuGramDesktop";
+      rev = "79d6df2c01974007b7943acc6f65fb1258c3a986";
+      fetchSubmodules = true;
+      hash = "sha256-llrHN/XCMKwAvbyUZ/92OUjAEOPJKPbDfldVChLZo5k=";
     };
-
-    patches = [];
-
-    postPatch = '''';
 
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
@@ -26,3 +24,7 @@ pkgs.telegram-desktop.overrideAttrs {
       "-DDESKTOP_APP_DISABLE_AUTOUPDATE=True"
     ];
 }
+
+#    patches = [];
+
+#    postPatch = '''';
