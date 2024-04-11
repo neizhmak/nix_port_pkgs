@@ -1,7 +1,9 @@
 { pkgs, fetchurl }:
 pkgs.telegram-desktop.overrideAttrs {
     pname = "ayugram";
-    version = "4.16.0";
+    version = "4.16";
+
+    mainProgram = "AyuGramDesktop";
 
     src = fetchurl {
       url = "https://github.com/AyuGram/AyuGramDesktop/archive/refs/tags/v4.16.tar.gz"
