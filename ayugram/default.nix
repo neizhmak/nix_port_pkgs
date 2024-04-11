@@ -1,17 +1,19 @@
 { pkgs, fetchFromGitHub }:
-pkgs.telegram-desktop.overrideAttrs {
+pkgs.telegram-desktop.overrideAttrs (
+let
+  src = fetchFromGitHub {
+    owner = "AyuGram";
+    repo = "AyuGramDesktop";
+    rev = "79d6df2c01974007b7943acc6f65fb1258c3a986";
+    fetchSubmodules = true;
+    hash = "sha256-OSFdSyFXOjLsXjQ0p2BcbUJzZ3lMVLzbxhCV8Rwhu0Y=";
+  };
+in rec {
+    inherit src;
     pname = "ayugram";
     version = "4.16.0";
     mainProgram = "AyuGramDesktop";
-
-    src = fetchFromGitHub {
-      owner = "AyuGram";
-      repo = "AyuGramDesktop";
-      rev = "79d6df2c01974007b7943acc6f65fb1258c3a986";
-      fetchSubmodules = true;
-      hash = "sha256-llrHN/XCMKwAvbyUZ/92OUjAEOPJKPbDfldVChLZo5k=";
-    };
-
+          
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
       "-Ddisable_autoupdate=ON"
@@ -23,7 +25,7 @@ pkgs.telegram-desktop.overrideAttrs {
       "-DDESKTOP_APP_DISABLE_SCUDO=ON"
       "-DDESKTOP_APP_DISABLE_AUTOUPDATE=True"
     ];
-}
+})
 
 #    patches = [];
 
