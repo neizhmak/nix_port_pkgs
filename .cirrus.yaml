@@ -7,10 +7,11 @@ env:
 
 build_ayugram_task:
   preparation_script:
-  - nix-channel --update
-  - nix-env -iA cachix -f https://cachix.org/api/v1/install
-  - cachix authtoken $TOKEN
+    - nix-channel --update
+    - nix-env -iA cachix -f https://cachix.org/api/v1/install
+    - cachix authtoken $TOKEN
   build_script:
-  - nix-build ./ -A ayugram
+    #- nix-build ./ -A ayugram
+    - nix-build '<nixpkgs>' --attr telegram-desktop --option substitute false
   push_cache_script:
-  - cachix push ports
+    - cachix push ports
