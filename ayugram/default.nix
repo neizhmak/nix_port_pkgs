@@ -12,6 +12,8 @@ pkgs.telegram-desktop.overrideAttrs {
 
     patches = [];
 
+    postPatch = '''';
+
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
       "-Ddisable_autoupdate=ON"
