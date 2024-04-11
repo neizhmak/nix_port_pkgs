@@ -16,7 +16,7 @@ in rec {
 
     patches = [];
     postPatch = '''';
-    buildInputs = previousAttrs.buildInputs + [glibmm];
+    buildInputs = finalAttrs.buildInputs ++ [glibmm];
 
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
