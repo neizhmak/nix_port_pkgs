@@ -13,7 +13,10 @@ in rec {
     pname = "ayugram";
     version = "4.16.0";
     mainProgram = "AyuGramDesktop";
-          
+
+    patches = [];
+    postPatch = '''';
+
     cmakeFlags = [
       "-DCMAKE_BUILD_TYPE=Release"
       "-Ddisable_autoupdate=ON"
@@ -26,7 +29,3 @@ in rec {
       "-DDESKTOP_APP_DISABLE_AUTOUPDATE=True"
     ];
 })
-
-#    patches = [];
-
-#    postPatch = '''';
