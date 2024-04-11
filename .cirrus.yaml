@@ -11,7 +11,6 @@ build_ayugram_task:
   - nix-env -iA cachix -f https://cachix.org/api/v1/install
   - cachix authtoken $TOKEN
   build_script:
-  - nix-build https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz -A telegram-desktop
-#  - nix-build '<nixpkgs>' --attr telegram-desktop
+  - nix-build ./ -A ayugram
   push_cache_script:
   - cachix push ports
