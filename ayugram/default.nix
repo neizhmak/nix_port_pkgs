@@ -1,13 +1,10 @@
-{ pkgs, fetchFromGitHub }:
+{ pkgs, fetchurl }:
 pkgs.telegram-desktop.overrideAttrs {
     pname = "ayugram";
     version = "4.16.0";
 
-    src = fetchFromGitHub {
-      owner = "AyuGram";
-      repo = "AyuGramDesktop";
-      rev = "v4.16";
-      fetchSubmodules = true;
+    src = fetchurl {
+      url = "https://github.com/AyuGram/AyuGramDesktop/archive/refs/tags/v4.16.tar.gz"
       hash = "sha256-llrHN/XCMKwAvbyUZ/92OUjAEOPJKPbDfldVChLZo5k=";
     };
 
