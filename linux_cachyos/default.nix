@@ -1,9 +1,9 @@
 { pkgs }:
 
-pkgs.linuxPackagesFor (pkgs.linux_latest.overrideAttrs (
+pkgs.linuxPackagesFor (pkgs.linux_6_8.overrideAttrs (
   let
-    version = "6.8.5";
-    modDirVersion = "6.8.5";
+#    version = "6.8.5";
+#    modDirVersion = "6.8.5";
   in rec {
-    inherit version modDirVersion;
+#    inherit version modDirVersion;
   }))
