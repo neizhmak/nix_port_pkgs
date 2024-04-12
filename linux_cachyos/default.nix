@@ -1,4 +1,4 @@
-{ pkgs }
+{ pkgs }:
 
 pkgs.linuxPackages_latest.overrideAttrs (
   let
