@@ -6,4 +6,4 @@ pkgs.linuxPackagesFor (pkgs.linux_latest.overrideAttrs (
     modDirVersion = "6.8.5";
   in rec {
     inherit version modDirVersion;
-  })
+  }))
