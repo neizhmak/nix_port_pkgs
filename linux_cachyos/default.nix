@@ -8,7 +8,7 @@ let
     hash = "";
   };
 in {
-  nyx = import ./overlays/default.nix {};
+  nyx = import ./flakes.nix {}; #./overlays/default.nix {};
 }
 
 
