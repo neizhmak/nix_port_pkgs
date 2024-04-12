@@ -33,6 +33,6 @@ let
 in rec {
     inherit pname version mainProgram src patches postPatch buildInputs postFixup cmakeFlags;
 
-    previousAttrs.mainProgram = mainProgram;
+    #previousAttrs.mainProgram = mainProgram;
     #finalAttrs.mainProgram = mainProgram;
 })
