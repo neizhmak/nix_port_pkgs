@@ -9,4 +9,4 @@ let
 in pkgs.linuxManualConfig {
     inherit version src configfile;
     allowImportFromDerivation = true;
-};
+}
