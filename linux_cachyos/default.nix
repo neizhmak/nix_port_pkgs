@@ -7,13 +7,9 @@ let
     fetchSubmodules = true;
     hash ""
   };
-
+in {
   nyx = import ./overlays/default.nix;
-in rec {
-  inherit nyx;
-  nyx.linuxPackages_cachyos;
 }
-
 
 
 #{ pkgs, ... }:
