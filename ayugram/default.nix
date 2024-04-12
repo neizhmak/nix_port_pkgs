@@ -31,5 +31,8 @@ let
     "-DDESKTOP_APP_DISABLE_AUTOUPDATE=True"
   ];
 in rec {
-    inherit pname version mainProgram src patches postPatch buildInputs cmakeFlags;
+    inherit pname version mainProgram src patches postPatch buildInputs postFixup cmakeFlags;
+
+    previousAttrs.mainProgram = mainProgram;
+    finalAttrs.mainProgram = mainProgram;
 })
