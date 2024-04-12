@@ -1,4 +1,4 @@
-{ pkgs, fetchFromGitHub, lib, stdenv }:
+{ pkgs, fetchFromGitHub, lib, stdenv, xdg-utils}:
 pkgs.telegram-desktop.overrideAttrs ( finalAttrs: previousAttrs:
 let
 
