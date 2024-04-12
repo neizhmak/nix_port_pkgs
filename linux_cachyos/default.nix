@@ -8,7 +8,7 @@ let
     hash = "";
   };
 in {
-  cachyosPackages = pkgs.callOverride ./pkgs/linux-cachyos/all-packages.nix { };
+  cachyosPackages = pkgs.callPackage ./pkgs/linux-cachyos/all-packages.nix { };
 }
 
 
