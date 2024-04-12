@@ -8,7 +8,7 @@ let
 
   src = fetchFromGitHub {
     owner = "AyuGram";
-    repo = ${mainProgram};
+    repo = "${mainProgram}";
     rev = "79d6df2c01974007b7943acc6f65fb1258c3a986";
     fetchSubmodules = true;
     hash = "sha256-OSFdSyFXOjLsXjQ0p2BcbUJzZ3lMVLzbxhCV8Rwhu0Y=";
