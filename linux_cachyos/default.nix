@@ -1,11 +1,11 @@
 { pkgs, fetchFromGitHub }:
 let
   src = pkgs.fetchFromGitHub {
-    owner = "chaotic-cx"
+    owner = "chaotic-cx";
     repo = "nyx";
-    ver = "nyxpkgs-unstable"
+    ver = "nyxpkgs-unstable";
     fetchSubmodules = true;
-    hash = ""
+    hash = "";
   };
 in {
   nyx = import ./overlays/default.nix;
