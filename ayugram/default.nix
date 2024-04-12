@@ -17,8 +17,16 @@ let
   patches = [];
   postPatch = '''';
   buildInputs = previousAttrs.buildInputs ++ [pkgs.glibmm_2_68];
-  postFixup = ''ls $out/bin/ '' + previousAttrs.postFixup;
-
+  postFixup = lib.optionalString stdenv.isLinux ''
+    # This is necessary to run Telegram in a pure environment.
+    # We also use gappsWrapperArgs from wrapGAppsHook.
+    wrapProgram $out/bin/ayugram-desktop \
+      "''${gappsWrapperArgs[@]}" \
+      "''${qtWrapperArgs[@]}" \
+      --suffix PATH : ${lib.makeBinPath [ xdg-utils ]}
+  '' + lib.optionalString stdenv.isDarwin ''
+    wrapQtApp $out/Applications/ayugram-desktop.app/Contents/MacOS/${mainProgram}
+  '';
   cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
     "-Ddisable_autoupdate=ON"
