@@ -1,9 +1,20 @@
-{ pkgs }:
+{ fetchurl, buildLinux, ... } @ args:
 
-pkgs.linuxPackagesFor (pkgs.linux_6_8.overrideAttrs (
-  let
-#    version = "6.8.5";
-#    modDirVersion = "6.8.5";
-  in rec {
-#    inherit version modDirVersion;
-  }))
+  buildLinux (args // rec {
+  version = "5.4.0-rc3";
+  modDirVersion = version;
+
+  src = fetchurl {
+    url = "https://github.com/jsakkine-intel/linux-sgx/archive/v23.tar.gz";
+    # After the first build attempt, look for "hash mismatch" and then 2 lines below at the "got:" line.
+    # Use "sha256-....." value here.
+    hash = "";
+  };
+  kernelPatches = [];
+
+  extraConfig = ''
+    INTEL_SGX y
+  '';
+
+  extraMeta.branch = "5.4";
+} // (args.argsOverride or {}));
