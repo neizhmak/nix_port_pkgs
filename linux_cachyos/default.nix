@@ -8,7 +8,7 @@ let
     hash = "";
   };
 in {
-  nyx = import ./flake.nix {}; #./overlays/default.nix {};
+  cachyosPackages = callOverride ../pkgs/linux-cachyos/all-packages.nix { };
 }
 
 
